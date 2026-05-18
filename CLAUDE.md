@@ -11,7 +11,7 @@ BTCPay Server plugin that adds **Pix** (Brazilian instant payments) as a payment
 | Repo | Description |
 |------|-------------|
 | `dadafros/depix-backend` | DePix API (Vercel serverless) — the upstream API this plugin calls |
-| `dadafros/depix-frontend` | DePix App PWA (vanilla JS, GitHub Pages) |
+| `dadafros/depix-frontend` | DePix App PWA (vanilla JS, Vercel) |
 | `dadafros/depix-dev` | Local dev environment (Docker) for frontend + backend |
 
 ## Code Language
