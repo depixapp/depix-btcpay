@@ -7,6 +7,7 @@ public enum DepixStatus
 {
     Pending,
     Processing,
+    Approved,
     Completed,
     Expired,
     Cancelled
@@ -24,6 +25,7 @@ public static class DepixStatusExtensions
         {
             case "pending":      result = DepixStatus.Pending;    return true;
             case "processing":   result = DepixStatus.Processing; return true;
+            case "approved":     result = DepixStatus.Approved;   return true;
             case "completed":    result = DepixStatus.Completed;  return true;
             case "expired":      result = DepixStatus.Expired;    return true;
             case "cancelled":    result = DepixStatus.Cancelled;  return true;
@@ -37,6 +39,11 @@ public static class DepixStatusExtensions
         {
             DepixStatus.Pending => null,
             DepixStatus.Processing => current.Status == InvoiceStatus.Settled
+                ? null
+                : new InvoiceState(InvoiceStatus.Processing, InvoiceExceptionStatus.None),
+            // `approved` is post-payment, pre-settlement (bank approved, DePix not
+            // yet delivered) — same buyer-paid-but-not-final state as Processing.
+            DepixStatus.Approved => current.Status == InvoiceStatus.Settled
                 ? null
                 : new InvoiceState(InvoiceStatus.Processing, InvoiceExceptionStatus.None),
             DepixStatus.Completed => current.Status == InvoiceStatus.Settled
