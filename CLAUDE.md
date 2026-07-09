@@ -132,23 +132,23 @@ Note: `dotnet` is not installed on the local dev machine. Use CI (GitHub Actions
    ```bash
    git add BTCPayServer.Plugins.DepixApp/BTCPayServer.Plugins.DepixApp.csproj
    git commit -m "chore: bump version to 1.0.7"
-   git push git@github-personal:dadafros/depix-btcpay.git HEAD:master
+   git push git@github-personal:depixapp/depix-btcpay.git HEAD:master
    ```
 
 3. **Tag the release** (must be on the correct commit after push):
    ```bash
    git tag v1.0.7
-   git push git@github-personal:dadafros/depix-btcpay.git v1.0.7
+   git push git@github-personal:depixapp/depix-btcpay.git v1.0.7
    ```
 
-4. **CI does the rest**: `.github/workflows/release.yml` triggers on `v*` tags, builds the plugin with `dotnet publish`, packages it as `BTCPayServer.Plugins.DepixApp.btcpay`, and creates a GitHub Release at `github.com/dadafros/depix-btcpay/releases/tag/v1.0.7` with the `.btcpay` file attached.
+4. **CI does the rest**: `.github/workflows/release.yml` triggers on `v*` tags, builds the plugin with `dotnet publish`, packages it as `BTCPayServer.Plugins.DepixApp.btcpay`, and creates a GitHub Release at `github.com/depixapp/depix-btcpay/releases/tag/v1.0.7` with the `.btcpay` file attached.
 
 If the tag needs to be moved after a fix (e.g. CI failed and you pushed another commit):
 ```bash
 git tag -d v1.0.7
-git push git@github-personal:dadafros/depix-btcpay.git :refs/tags/v1.0.7
+git push git@github-personal:depixapp/depix-btcpay.git :refs/tags/v1.0.7
 git tag v1.0.7
-git push git@github-personal:dadafros/depix-btcpay.git v1.0.7
+git push git@github-personal:depixapp/depix-btcpay.git v1.0.7
 ```
 
 ## BTCPay Server compatibility
@@ -192,24 +192,24 @@ Plugins submitted to `github.com/btcpayserver/btcpayserver-plugins` are distribu
 
 ## Git
 
-- Remote: `git@github-personal:dadafros/depix-btcpay.git`
+- Remote: `git@github-personal:depixapp/depix-btcpay.git`
 - SSH key alias `github-personal` maps to `~/.ssh/id_ed25519_outlook`
 - Commit as: `dadafros <davi_bf@outlook.com>` — set via `git config user.name "dadafros"` and `git config user.email "davi_bf@outlook.com"`
 - **IMPORTANT**: The machine's global git config uses a different identity (`davifros`). Always verify the local repo config is set correctly before committing.
-- Push command: `git push git@github-personal:dadafros/depix-btcpay.git <branch>:<target>`
+- Push command: `git push git@github-personal:depixapp/depix-btcpay.git <branch>:<target>`
 - Main branch: `master`
 - Branch naming: `feat/*` for features
 - CI: GitHub Actions runs Playwright UI tests on push to `master` and on PRs to `master`
-- **This is a fork of `thgO-O/btcpayserver-plugin-depix`. NEVER open PRs or push to the upstream repo. All work stays on `dadafros/depix-btcpay` only.**
+- **This is a fork of `thgO-O/btcpayserver-plugin-depix`. NEVER open PRs or push to the upstream repo. All work stays on `depixapp/depix-btcpay` only.**
 
 ### Push examples
 
 ```bash
 # Push current branch to master
-git push git@github-personal:dadafros/depix-btcpay.git HEAD:master
+git push git@github-personal:depixapp/depix-btcpay.git HEAD:master
 
 # Push a feature branch
-git push git@github-personal:dadafros/depix-btcpay.git feat/my-feature
+git push git@github-personal:depixapp/depix-btcpay.git feat/my-feature
 
 # HTTPS origin will NOT work (permission denied) — always use SSH with github-personal
 ```
@@ -232,4 +232,4 @@ Ciclo de vida completo em `~/.claude/CLAUDE.md`. Específico deste repo:
 - **Fluxo padrão** (default): worktree com branch → commit → `git push origin HEAD:master` → cleanup imediato (remove worktree + delete branch + `git fetch --prune`)
 - **Fluxo PR** (trabalho grande/complexo, ver "Workflow Rules"): worktree → `git push -u origin <branch>` → `gh pr create` → após merge, mesmo cleanup
 - **Antes de criar**: `git worktree list` + `git branch -a` pra não duplicar trabalho existente
-- **Importante**: push sempre pro `dadafros/depix-btcpay` (NUNCA para upstream `thgO-O/btcpayserver-plugin-depix`). Use SSH com alias `github-personal`.
+- **Importante**: push sempre pro `depixapp/depix-btcpay` (NUNCA para upstream `thgO-O/btcpayserver-plugin-depix`). Use SSH com alias `github-personal`.

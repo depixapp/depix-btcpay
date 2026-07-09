@@ -19,7 +19,7 @@ Pix payment amounts range from **R$ 5.00 to R$ 3,000.00** per transaction.
 
 ## Installation
 
-1. Go to [**GitHub Releases**](https://github.com/dadafros/depix-btcpay/releases) and download the latest `.btcpay` file.
+1. Go to [**GitHub Releases**](https://github.com/depixapp/depix-btcpay/releases) and download the latest `.btcpay` file.
 2. In BTCPay Server: go to **Server Settings > Plugins > Upload Plugin**.
 3. Select the downloaded `.btcpay` file and confirm.
 4. Restart BTCPay Server when prompted.
@@ -78,7 +78,7 @@ Liquid transaction fees are paid in **L-BTC**. Keep a small L-BTC balance to cov
 
 ## Support
 
-Open an [issue](https://github.com/dadafros/depix-btcpay/issues) or join the [WhatsApp group](https://chat.whatsapp.com/KWuysHsJhXwCQOpYHJZUP5?mode=gi_t).
+Open an [issue](https://github.com/depixapp/depix-btcpay/issues) or join the [WhatsApp group](https://chat.whatsapp.com/KWuysHsJhXwCQOpYHJZUP5?mode=gi_t).
 
 ## License
 

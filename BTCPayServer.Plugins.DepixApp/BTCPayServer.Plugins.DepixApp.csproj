@@ -11,7 +11,7 @@
     <Version>1.3.0</Version>
     <BTCPayMinVersion>2.3.7</BTCPayMinVersion>
     <Authors>dadafros</Authors>
-    <RepositoryUrl>https://github.com/dadafros/depix-btcpay</RepositoryUrl>
+    <RepositoryUrl>https://github.com/depixapp/depix-btcpay</RepositoryUrl>
     <PackageProjectUrl>https://depixapp.com/btcpay</PackageProjectUrl>
   </PropertyGroup>
 
